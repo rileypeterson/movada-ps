@@ -1,9 +1,28 @@
+<!doctype html>
+<html>
+
+<body>
 <form action="{{ url_for('movada') }}" method="post">
-    Port: <input type="text" name="port"><br>
-    Url: <input type="text" name="url"><br>
+    Port: <input style="width: 500px;" type="text" name="port"><br>
+    Url : <input style="width: 500px;" type="text" name="url"><br>
     <input type="submit" value="Submit">
 </form>
 
-<div id ="result">
+<div id="result">
     <strong style="color:red">{{result}}</strong>
 </div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+
+</body>
+</html>
