@@ -1,0 +1,9 @@
+<form action="{{ url_for('movada') }}" method="post">
+    Port: <input type="text" name="port"><br>
+    Url: <input type="text" name="url"><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id ="result">
+    <strong style="color:red">{{result}}</strong>
+</div>
